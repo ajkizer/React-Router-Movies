@@ -3,6 +3,7 @@ import { Route } from "react-router-dom";
 import MovieList from "./Movies/MovieList";
 import Movie from "./Movies/Movie";
 import SavedList from "./Movies/SavedList";
+import MovieCard from "./Movies/MovieCard";
 
 const App = () => {
   const [savedList, setSavedList] = useState([]);
@@ -14,10 +15,9 @@ const App = () => {
   return (
     <div>
       <SavedList list={savedList} />
-      <div>
-        <Route exact path="/" component={MovieList} />
-        <Route path="/movie/:id" component={Movie} />
-      </div>
+
+      <Route exact path="/" component={MovieList} />
+      <Route exact path="/movie/:id" render={props => <Movie {...props} />} />
     </div>
   );
 };
