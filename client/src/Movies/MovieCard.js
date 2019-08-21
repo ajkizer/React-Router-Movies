@@ -7,8 +7,12 @@ const MovieCard = props => {
       <Link to={`/movies/${props.id}`}>
         <h2>{props.title}</h2>
       </Link>
-      <div className="movie-director">Director: {props.director}</div>
-      <div className="movie-metascore">Metascore: {props.metascore}</div>
+      <div className="movie-director">
+        Director: <em>{props.director}</em>
+      </div>
+      <div className="movie-metascore">
+        Metascore: <strong>{props.metascore}</strong>
+      </div>
       <h3>Actors</h3>
 
       {props.stars.map(star => (
