@@ -31,6 +31,7 @@ const MovieList = props => {
 
 function MovieDetails({ movie }) {
   const { id, title, director, metascore, stars } = movie;
+
   return (
     <MovieCard
       id={id}
